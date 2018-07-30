@@ -15,7 +15,7 @@ contract TestToken is StandardToken {
     address public testFundDeposit;      // initial token owner
 
     // crowdsale parameters
-    bool public isFinalized;              // switched to true in operational state
+    bool public isFinalized;             // switched to true in operational state
     uint256 public fundingStartBlock;
     uint256 public fundingEndBlock;
     uint256 public crowdsaleSupply = 0;         // crowdsale supply
@@ -61,7 +61,7 @@ contract TestToken is StandardToken {
         balances[testFundDeposit] = safeSub(balances[testFundDeposit], tokens); // subtracts amount from initial balance
         emit CreateTestToken(msg.sender, tokens);
     }
-    /// @dev Accepts ether and creates new XPA tokens.
+    /// @dev Accepts ether and creates new Test tokens.
     function createTokens() payable external {
         require(!isFinalized);
         require(block.number >= fundingStartBlock);
@@ -98,7 +98,7 @@ contract TestToken is StandardToken {
     /// @dev Ends the funding period and sends the ETH home
     function finalize() onlyOwner external {
         assert(!isFinalized);
-      
+
         // move to operational
         isFinalized = true;
         ethFundDeposit.transfer(address(this).balance);
