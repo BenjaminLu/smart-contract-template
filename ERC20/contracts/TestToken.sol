@@ -12,10 +12,10 @@ contract TestToken is StandardToken {
 
     // contracts
     address public ethFundDeposit;      // beneficiary address.
-    address public testFundDeposit;      // initial token owner
+    address public testFundDeposit;     // initial token owner
 
     // crowdsale parameters
-    bool public isFinalized;             // switched to true in operational state
+    bool public isFinalized;       // switched to true in operational state
     uint256 public fundingStartBlock;
     uint256 public fundingEndBlock;
     uint256 public crowdsaleSupply = 0;         // crowdsale supply

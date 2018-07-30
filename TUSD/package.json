@@ -1,0 +1,18 @@
+{
+  "name": "tusd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "env.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ethereumjs-wallet": "^0.6.1",
+    "truffle-wallet-provider": "0.0.5"
+  }
+}
